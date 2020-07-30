@@ -43,7 +43,7 @@ setup(
         '-fomit-frame-pointer',
       ],
       libraries=[
-        'boost_python%s%s' % sys.version[:2]
+        'boost_python%s%s' % sys.version_info[:2]
       ],
       language='c++',
     ),
