@@ -20,7 +20,7 @@ $(OBJECTS): rand48.h qdigest.h prng.h lossycount.h gk4.h frequent.h countmin.h c
 """
 setup(
   name='lossycount',
-  version='1.9',
+  version='2.0',
   long_description_content_type='text/markdown',
   long_description=long_description,
   author_email='zsp042@gmail.com',
