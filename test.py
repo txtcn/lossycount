@@ -8,7 +8,8 @@ lc = LossyCount(0.001)
 for i in range(200):
   for j in range(100):
     for k in range(j):
-      lc.update(j, 1)
+      lc.incr(j)
+      # lc.incr(j, 1)
 
 for i in range(1, 100, 30):
   print(i)

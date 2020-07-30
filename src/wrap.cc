@@ -40,7 +40,7 @@ class LossyCount{
             LCL_Destroy(_lcl);
         }
         
-        void update(LCLitem_t item,int value=1){
+        void incr(LCLitem_t item,int value=1){
             LCL_Update(_lcl,item,value);
         }
 
@@ -72,10 +72,14 @@ class LossyCount{
 
 };
 
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS(incr_overloads, incr, 1, 2);
+
 BOOST_PYTHON_MODULE(lossycount)
 {
+    namespace python = boost::python;    
+
     class_<LossyCount>("LossyCount",init<float>())
-        .def("update",&LossyCount::update)
+        .def("incr",&LossyCount::incr, incr_overloads())
         .def("err",&LossyCount::err)
         .def("output",&LossyCount::output)
         .def("est",&LossyCount::est)
