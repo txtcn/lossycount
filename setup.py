@@ -7,9 +7,6 @@ with open(
   encoding='utf-8'
 ) as f:
   long_description = f.read()
-
-with open(join(pwd, 'requirements.txt')) as f:
-  install_requires = f.read().splitlines()
 """
 CXXFLAGS=-O2 -DNDEBUG -fPIC
 CXX=g+
@@ -22,7 +19,7 @@ $(OBJECTS): rand48.h qdigest.h prng.h lossycount.h gk4.h frequent.h countmin.h c
 """
 setup(
   name='lossycount',
-  version='1.5',
+  version='1.6',
   long_description_content_type='text/markdown',
   long_description=long_description,
   author_email='zsp042@gmail.com',
