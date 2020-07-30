@@ -1,3 +1,4 @@
+import sys
 from setuptools import setup, Extension
 from os.path import join, abspath, dirname
 pwd = abspath(dirname(__file__))
@@ -41,7 +42,9 @@ setup(
         '-DNDEBUG',
         '-fomit-frame-pointer',
       ],
-      libraries=['boost_python3'],
+      libraries=[
+        'boost_python%s%s' % sys.version[:2]
+      ],
       language='c++',
     ),
   ],

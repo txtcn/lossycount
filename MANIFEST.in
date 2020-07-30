@@ -1,0 +1,5 @@
+recursive-include src *.h
+recursive-include src *.cc
+prune dist
+lossycount.egg-info
+
