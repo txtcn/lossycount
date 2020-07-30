@@ -43,7 +43,6 @@ setup(
         '-DNDEBUG',
         '-fomit-frame-pointer',
       ],
-      zip_safe=False,
       libraries=['boost_python3'],
       language='c++',
     ),
