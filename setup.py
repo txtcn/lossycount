@@ -18,7 +18,7 @@ $(OBJECTS): rand48.h qdigest.h prng.h lossycount.h gk4.h frequent.h countmin.h c
 """
 setup(
   name='lossycount',
-  version='1.2',
+  version='1.3',
   long_description_content_type='text/markdown',
   long_description=long_description,
   author_email='zsp042@gmail.com',
@@ -39,6 +39,7 @@ setup(
         '-DNDEBUG',
         '-fomit-frame-pointer',
       ],
+      zip_safe=False,
       libraries=['boost_python3'],
       language='c++',
     ),
