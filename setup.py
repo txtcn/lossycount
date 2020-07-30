@@ -1,10 +1,14 @@
 from setuptools import setup, Extension
-
-import sys
-with open("readme.md") as f:
+from os.path import join, abspath, dirname
+pwd = abspath(dirname(__file__))
+with open(
+  join(pwd,
+       'README.md'),
+  encoding='utf-8'
+) as f:
   long_description = f.read()
 
-with open('requirements.txt') as f:
+with open(join(pwd, 'requirements.txt')) as f:
   install_requires = f.read().splitlines()
 """
 CXXFLAGS=-O2 -DNDEBUG -fPIC
