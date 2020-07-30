@@ -35,7 +35,10 @@ class LossyCount{
             _lcl(LCL_Init(phi))
         {
         }
-        
+       
+        ~LossyCount(){
+          destroy();
+        }
         void destroy(){
             LCL_Destroy(_lcl);
         }
@@ -58,7 +61,7 @@ class LossyCount{
         list output(LCLweight_t thresh){
             list res;
 
-            for (int i=1;i<=_lcl->size;++i)
+            for (int i=0;i<=_lcl->size;++i)
             {
                 LCLCounter& counters = _lcl->counters[i];
                 if (counters.count>=thresh)
