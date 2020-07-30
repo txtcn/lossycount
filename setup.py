@@ -1,10 +1,10 @@
 from setuptools import setup, Extension
 
 import sys
-with open("../readme.md") as f:
+with open("readme.md") as f:
   long_description = f.read()
 
-with open('../requirements.txt') as f:
+with open('requirements.txt') as f:
   install_requires = f.read().splitlines()
 """
 CXXFLAGS=-O2 -DNDEBUG -fPIC
@@ -18,7 +18,7 @@ $(OBJECTS): rand48.h qdigest.h prng.h lossycount.h gk4.h frequent.h countmin.h c
 """
 setup(
   name='lossycount',
-  version='1.1',
+  version='1.2.1',
   long_description_content_type='text/markdown',
   long_description=long_description,
   author_email='zsp042@gmail.com',
@@ -27,11 +27,11 @@ setup(
     Extension(
       'lossycount',
       [
-        'wrap.cc',
-        'rand48.cc',
-        'qdigest.cc',
-        'prng.cc',
-        'lossycount.cc'
+        'src/wrap.cc',
+        'src/rand48.cc',
+        'src/qdigest.cc',
+        'src/prng.cc',
+        'src/lossycount.cc'
       ],
       extra_compile_args=[
         '-O3',
@@ -39,9 +39,7 @@ setup(
         '-DNDEBUG',
         '-fomit-frame-pointer',
       ],
-      libraries=[
-        'boost_python%s%s' % sys.version_info[:2],
-      ],
+      libraries=['boost_python3'],
       language='c++',
     ),
   ],

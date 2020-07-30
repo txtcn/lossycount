@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 _DIR=$(cd "$(dirname "$0")"; pwd)
-cd $_DIR/src
+cd $_DIR
 
 rm -rf dist/
 rm -rf build/

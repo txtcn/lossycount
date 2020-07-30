@@ -7,6 +7,23 @@ apt-get install -y libboost-python-dev
 pip install lossycount
 ```
 
+if cannot find -lboost_python3
+
+occurred.
+
+Then I went to
+
+/usr/lib/x86_64-linux-gnu
+
+search and found that the library file is in different name as
+
+libboost_python-py35.so
+
+so I made a link by following command
+
+sudo ln -s libboost_python-py35.so libboost_python3.so 
+which solved my problem.
+
 ## Use
 ```
 from lossycount import LossyCount
